@@ -1,16 +1,45 @@
 ## Hi there 👋
 
-<!--
-**luanareis27/luanareis27** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+<h1 align="center">👩‍💻 Olá, eu sou a Luana Neres Reis!</h1>
 
-Here are some ideas to get you started:
+<p align="center">
+  🎓 Estudante de Análise e Desenvolvimento de Sistemas <br>
+  💻 Bolsista Front-End | SOFTEX & Inova Maranhão + SECTI <br>
+  📍 São Luís - MA | 📧 luananreis21@gmail.com
+</p>
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+---
+
+## ✨ Sobre Mim
+
+Sou uma mulher apaixonada por tecnologia, design e criatividade.  
+Tenho 28 anos e estou trilhando minha jornada como **desenvolvedora front-end**.  
+Meus objetivos vão além de escrever código — quero construir experiências que conectem pessoas!
+
+💡 Gosto de aprender, criar e evoluir — cada linha de código é um passo na direção dos meus sonhos.
+
+---
+
+## 🚀 Tecnologias que uso
+
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=000)
+![Git](https://img.shields.io/badge/Git-F05032?style=flat&logo=git)
+![VS Code](https://img.shields.io/badge/VSCode-007ACC?style=flat&logo=visual-studio-code)
+
+---
+
+## 📬 Onde Me Encontrar
+
+- 📧 Email: [luananreis21@gmail.com](mailto:luananreis21@gmail.com)  
+- 💼 LinkedIn: [linkedin.com/in/luana-reis-505b62273](https://www.linkedin.com/in/luana-reis-505b62273)
+
+---
+
+<p align="center">
+✨ Obrigada por visitar meu perfil! ✨ <br>
+⭐ Dê uma estrela nos meus projetos se curtir!
+</p>
+
+  
