@@ -33,7 +33,7 @@ Meus objetivos vão além de escrever código — quero construir experiências 
 ## 📬 Onde Me Encontrar
 
 - 📧 Email: [luananreis21@gmail.com](mailto:luananreis21@gmail.com)  
-- 💼 LinkedIn: [linkedin.com/in/luana-reis-505b62273](https://www.linkedin.com/in/luana-reis-505b62273)
+- 💼 LinkedIn: [linkedin.com/in/https://www.linkedin.com/in/luana-reis-505b62273?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app](https://www.linkedin.com/in/luana-reis-505b62273?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
 
 ---
 
