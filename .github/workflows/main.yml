@@ -47,3 +47,235 @@ jobs:
 
 
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Atividade 05 - Integração JS, HTML e CSS</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f4f4f4;
+    }
+    section {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #333;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+      text-align: center;
+      padding: 8px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 5px 0;
+      padding: 5px;
+      background: #eee;
+      border-radius: 4px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 5px 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Atividade 05 - Integração de JavaScript, HTML e CSS</h1>
+
+  <!-- 1. Data por extenso -->
+  <section>
+    <h2>1. Data por extenso</h2>
+    <input type="text" id="dataInput" placeholder="dd/mm/aaaa">
+    <button onclick="converterData()">Converter</button>
+    <p id="dataExtenso"></p>
+  </section>
+
+  <!-- 2. Simulador de empréstimo -->
+  <section>
+    <h2>2. Simulador de Empréstimo</h2>
+    <label>Valor do empréstimo: <input type="number" id="valorEmp"></label><br>
+    <label>Parcelas (1 a 36): <input type="number" id="parcelas" min="1" max="36"></label><br>
+    <label>Juros (% ao mês): <input type="number" id="juros"></label><br>
+    <button onclick="calcularEmprestimo()">Calcular</button>
+    <p id="resultadoEmp"></p>
+    <div id="tabelaEmp"></div>
+  </section>
+
+  <!-- 3. Formulário de consumo -->
+  <section>
+    <h2>3. Formulário de Consumo</h2>
+    <label>Nome: <input type="text" id="nomeCliente"></label><br><br>
+    <strong>Bebidas:</strong><br>
+    <label><input type="checkbox" value="Suco"> Suco (4.00)</label><br>
+    <label><input type="checkbox" value="Refrigerante"> Refrigerante (2.50)</label><br>
+    <label><input type="checkbox" value="Água"> Água (1.50)</label><br><br>
+    <strong>Doces e Salgados:</strong><br>
+    <label><input type="checkbox" value="Bolo"> Bolo (3.50)</label><br>
+    <label><input type="checkbox" value="Pastel"> Pastel (3.00)</label><br>
+    <label><input type="checkbox" value="Torta"> Torta (4.00)</label><br><br>
+    <button onclick="calcularConsumo()">Calcular</button>
+    <p id="resumoConsumo"></p>
+  </section>
+
+  <!-- 4. Quiz -->
+  <section>
+    <h2>4. Quiz Interativo</h2>
+    <form id="quizForm">
+      <p>1. Qual a capital do Brasil?</p>
+      <input type="radio" name="q1" value="Rio"> Rio de Janeiro<br>
+      <input type="radio" name="q1" value="Brasília"> Brasília<br>
+      <input type="radio" name="q1" value="SP"> São Paulo<br>
+
+      <p>2. Quanto é 5 + 7?</p>
+      <input type="radio" name="q2" value="10"> 10<br>
+      <input type="radio" name="q2" value="12"> 12<br>
+      <input type="radio" name="q2" value="14"> 14<br>
+
+      <p>3. Qual linguagem usamos no navegador?</p>
+      <input type="radio" name="q3" value="Java"> Java<br>
+      <input type="radio" name="q3" value="Python"> Python<br>
+      <input type="radio" name="q3" value="JavaScript"> JavaScript<br>
+
+      <button type="button" onclick="corrigirQuiz()">Enviar</button>
+    </form>
+    <p id="resultadoQuiz"></p>
+  </section>
+
+  <!-- 5. Lista de tarefas -->
+  <section>
+    <h2>5. Lista de Tarefas</h2>
+    <input type="text" id="novaTarefa" placeholder="Digite uma tarefa">
+    <button onclick="adicionarTarefa()">Adicionar</button>
+    <ul id="listaTarefas"></ul>
+  </section>
+
+<script>
+  // 1. Data por extenso
+  function converterData() {
+    const meses = ["janeiro","fevereiro","março","abril","maio","junho",
+                   "julho","agosto","setembro","outubro","novembro","dezembro"];
+    let data = document.getElementById("dataInput").value;
+    let partes = data.split("/");
+    if (partes.length !== 3) {
+      document.getElementById("dataExtenso").innerText = "Formato inválido.";
+      return;
+    }
+    let dia = parseInt(partes[0]);
+    let mes = parseInt(partes[1]) - 1;
+    let ano = parseInt(partes[2]);
+    let dataObj = new Date(ano, mes, dia);
+    if (dataObj.getDate() !== dia || dataObj.getMonth() !== mes || dataObj.getFullYear() !== ano) {
+      document.getElementById("dataExtenso").innerText = "Data inválida.";
+      return;
+    }
+    document.getElementById("dataExtenso").innerText = `${dia} de ${meses[mes]} de ${ano}`;
+  }
+
+  // 2. Simulador de Empréstimo
+  function calcularEmprestimo() {
+    let valor = parseFloat(document.getElementById("valorEmp").value);
+    let n = parseInt(document.getElementById("parcelas").value);
+    let taxa = parseFloat(document.getElementById("juros").value) / 100;
+    if (isNaN(valor) || isNaN(n) || isNaN(taxa) || n < 1 || n > 36) {
+      document.getElementById("resultadoEmp").innerText = "Preencha os dados corretamente.";
+      return;
+    }
+    let parcela = valor * (taxa * Math.pow(1+taxa, n)) / (Math.pow(1+taxa, n) - 1);
+    let total = parcela * n;
+    document.getElementById("resultadoEmp").innerText =
+      `Parcela: R$ ${parcela.toFixed(2)} | Total: R$ ${total.toFixed(2)}`;
+
+    let tabela = "<table><tr><th>Parcela</th><th>Valor</th><th>Saldo Restante</th></tr>";
+    let saldo = total;
+    for (let i=1; i<=n; i++) {
+      saldo -= parcela;
+      tabela += `<tr><td>${i}</td><td>R$ ${parcela.toFixed(2)}</td><td>R$ ${Math.max(saldo,0).toFixed(2)}</td></tr>`;
+    }
+    tabela += "</table>";
+    document.getElementById("tabelaEmp").innerHTML = tabela;
+  }
+
+  // 3. Formulário de consumo
+  const precos = {Suco:4, Refrigerante:2.5, Água:1.5, Bolo:3.5, Pastel:3, Torta:4};
+  function calcularConsumo() {
+    let nome = document.getElementById("nomeCliente").value;
+    let checkboxes = document.querySelectorAll("input[type=checkbox]:checked");
+    if (!nome) {
+      document.getElementById("resumoConsumo").innerText = "Digite o nome.";
+      return;
+    }
+    let itens = [];
+    let total = 0;
+    checkboxes.forEach(cb => {
+      itens.push(cb.value);
+      total += precos[cb.value];
+    });
+    document.getElementById("resumoConsumo").innerText =
+      `${nome} consumiu: ${itens.join(", ")}. Valor total: R$ ${total.toFixed(2)}`;
+  }
+
+  // 4. Quiz
+  function corrigirQuiz() {
+    let respostas = {q1:"Brasília", q2:"12", q3:"JavaScript"};
+    let pontos = 0;
+    let resultado = "";
+    for (let q in respostas) {
+      let marcada = document.querySelector(`input[name=${q}]:checked`);
+      if (marcada) {
+        if (marcada.value === respostas[q]) {
+          pontos++;
+          resultado += `${q}: Correta<br>`;
+        } else {
+          resultado += `${q}: Errada<br>`;
+        }
+      } else {
+        resultado += `${q}: Não respondida<br>`;
+      }
+    }
+    resultado += `<br>Nota final: ${pontos}/3<br>`;
+    resultado += pontos === 3 ? "Parabéns, excelente!" :
+                 pontos === 2 ? "Muito bom, quase lá!" : "Precisa estudar mais.";
+    document.getElementById("resultadoQuiz").innerHTML = resultado;
+  }
+
+  // 5. Lista de tarefas
+  function adicionarTarefa() {
+    let tarefa = document.getElementById("novaTarefa").value.trim();
+    if (!tarefa) return alert("Digite uma tarefa.");
+    let li = document.createElement("li");
+    let span = document.createElement("span");
+    span.textContent = tarefa;
+    let btnConcluir = document.createElement("button");
+    btnConcluir.textContent = "✔";
+    btnConcluir.onclick = () => span.style.textDecoration = "line-through";
+    let btnRemover = document.createElement("button");
+    btnRemover.textContent = "✖";
+    btnRemover.onclick = () => li.remove();
+    li.appendChild(span);
+    li.appendChild(btnConcluir);
+    li.appendChild(btnRemover);
+    document.getElementById("listaTarefas").appendChild(li);
+    document.getElementById("novaTarefa").value = "";
+  }
+</script>
+</body>
+</html>
+
