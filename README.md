@@ -12,7 +12,7 @@
 ## ✨ Sobre Mim
 
 Sou uma mulher apaixonada por tecnologia, design e criatividade.  
-Tenho 28 anos e estou trilhando minha jornada como **desenvolvedora front-end**.  
+Tenho 28 anos e estou trilhando minha jornada como desenvolvedora.  
 Meus objetivos vão além de escrever código — quero construir experiências que conectem pessoas!
 
 💡 Gosto de aprender, criar e evoluir — cada linha de código é um passo na direção dos meus sonhos.
